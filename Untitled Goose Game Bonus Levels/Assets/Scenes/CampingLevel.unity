@@ -437,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788270692}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0.000000022481217, z: -0.000000009312025, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: -0.00000002248122, z: 0.000000009312027, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 10.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -806,7 +806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052408639}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0.000000022481217, z: -0.000000009312025, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: -0.00000002248122, z: 0.000000009312027, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 10.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1206,7 +1206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PositionMode: 1
   m_RotationMode: 0
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_Targets:
   - target: {fileID: 1352897546}
     weight: 2
@@ -1659,7 +1659,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1539316153720814798, guid: b9271409b814a894b9b9e756cb9ba1ee, type: 3}
+      propertyPath: _targetEase
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539316153720814798, guid: b9271409b814a894b9b9e756cb9ba1ee, type: 3}
       propertyPath: targetGroup
+      value: 
+      objectReference: {fileID: 1350830905}
+    - target: {fileID: 1539316153720814798, guid: b9271409b814a894b9b9e756cb9ba1ee, type: 3}
+      propertyPath: _targetGroup
       value: 
       objectReference: {fileID: 1350830905}
     - target: {fileID: 3887960874677276294, guid: b9271409b814a894b9b9e756cb9ba1ee, type: 3}
