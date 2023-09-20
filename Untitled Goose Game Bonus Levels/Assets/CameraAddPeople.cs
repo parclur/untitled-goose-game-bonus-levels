@@ -7,11 +7,13 @@ public class CameraAddPeople : MonoBehaviour
 {
     SphereCollider sphereCollider;
     public CinemachineTargetGroup _targetGroup;
+    Transform player;
     
     // Start is called before the first frame update
     void Start()
     {
         sphereCollider = GetComponent<SphereCollider>();
+        player = GetComponent<Transform>();
     }
     
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class CameraAddPeople : MonoBehaviour
             //targetGroup.AddMember(other.gameObject.transform,1,0);
             AddTarget(other.gameObject.transform);
             Debug.Log("Add member");
+            //_targetGroup.FindMember(player).;
         }
     }
     
@@ -56,8 +59,9 @@ public class CameraAddPeople : MonoBehaviour
         {
             if (_targetGroup.FindMember(target) == -1)
             {
-                _targetGroup.AddMember(target, 0, 1);
+                _targetGroup.AddMember(target, 0, 2);
                 StartCoroutine(easeInMember(target));
+                
             }
         }
     }
@@ -66,9 +70,10 @@ public class CameraAddPeople : MonoBehaviour
     {
         int index = _targetGroup.FindMember(target);
         CinemachineTargetGroup.Target t = _targetGroup.m_Targets[index];
-        while (t.weight < 0.66f)
+        //CinemachineTargetGroup.Target p = _targetGroup.m_Targets[index];
+        while (t.weight < 0.99f)
         {
-            t.weight = Mathf.MoveTowards(t.weight, 0.66f, _targetEase * Time.smoothDeltaTime);
+            t.weight = Mathf.MoveTowards(t.weight, 0.99f, _targetEase * Time.smoothDeltaTime);
             index = _targetGroup.FindMember(target);
             if (index >= 0)
             {
@@ -76,7 +81,7 @@ public class CameraAddPeople : MonoBehaviour
             }
             yield return new WaitForSeconds(0.01f);
         }
-        t.weight = 0.66f;
+        t.weight = 0.99f;
     }
 
     public void RemoveTarget(Transform target)
